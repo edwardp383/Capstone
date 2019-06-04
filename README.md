@@ -119,6 +119,8 @@ Post "/message/"
 
 
 ## Models
+
+```
 const developerSchema = new mongoose.Schema({
 	userName: { type: String, required: true, unique: true },
 	password: { type: String, required: true }, 
@@ -182,5 +184,5 @@ const messageSchema = new mongoose.Schema({
     developerId: null
 
 })
-
+```
 
