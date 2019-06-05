@@ -165,7 +165,7 @@ const conversationSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId, 
 		ref: 'Developer'
 	},
-  recruiter: {
+  	recruiter: {
 		type: mongoose.Schema.Types.ObjectId, 
 		ref: 'Recruiter'
 	},
@@ -177,11 +177,16 @@ const conversationSchema = new mongoose.Schema({
 })
 
 const messageSchema = new mongoose.Schema({
-  time: { type: Date, default: Date.now },
-	text: { type: String, required: true },
-  //user
-    recruiterId: null
-    developerId: null
+  	time: { type: Date, default: Date.now },
+		text: { type: String, required: true },
+  	fromRec:[{
+		type: mongoose.Schema.Types.ObjectId, 
+		ref: 'Recruiter'
+	}],
+ 	fromDev: [{
+		type: mongoose.Schema.Types.ObjectId, 
+		ref: 'Developer'
+	}]
 
 })
 ```
